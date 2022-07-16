@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>users</title>
+    <link rel="stylesheet" href="{{ url_for('assignment_4.static',filename='designforproject.css') }}">
+
+</head>
+<body>
+<div id="container">
+    {% set page_name='assignment_4'%}
+    {% include('Header.html') %}
+    {% include('NAV.html') %}
+    <div id="item3">
+    <h2>Insert Form</h2>
+        <form action="/insert_user" method="post">
+            <input type="text" name="name" placeholder="Insert Name">
+            <input type="email" name="email" placeholder="Email">
+            <input type="submit">
+        </form>
+
+        {% for user in users %}
+            <h4>{{ user.name }}</h4>
+            <h4>Email: {{ user.email }}</h4>
+            <h4 style="color: cadetblue">Date: {{ user.create_date }}</h4>
+              {% if user.age %}
+                <h4>Age: {{ user.age }}</h4>
+                {% endif %}
+
+
+             <form action="/update_user" method="post">
+                    <input type="hidden" name="name" value="{{ user.name }}">
+                    <label for="age">Age:</label>
+                    <input type="number" name="age" placeholder="Write your age" required>
+                    <input type="submit">
+
+                </form>
+
+            <form action="/delete_user" method="post">
+                <input type="hidden" name="user_id" value="{{ user.id }}">
+                <input type="submit" value="Delete">
+            </form>
+
+      {% endfor %}
+    </div>
+</div>
+
+</body>
+</html>

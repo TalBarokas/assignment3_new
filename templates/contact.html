@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>contact us</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='designforproject.css') }}">
+</head>
+<body>
+<div id="container">
+    {% set page_name='Contact'%}
+    {% include('Header.html') %}
+    {% include('NAV.html') %}
+    <form id="item3">
+         <label for="Fullname">Full name</label>
+                <input type="text" id="Fullname" name="Fullname">
+                <br>
+
+                <input type="radio" id="male" name="gender" value="male">
+                <label for="male">Male</label><br>
+                <input type="radio" id="female" name="gender" value="female">
+                <label for="female">Female</label><br>
+                <input type="radio" id="other" name="gender" value="other">
+                <label for="other">Order</label><br>
+
+                <label for="email">email</label>
+                <input type="email" id="email" name="email">
+
+                <br>
+                <label for="comment">your comment</label><br>
+                <textarea name="comment" id="comment" cols="50" rows="7"></textarea><br>
+
+                <label for="submit">submit</label>
+                <input type="submit" value="submit">
+                <br>
+    </form>
+</div>
+
+</body>
+</html>

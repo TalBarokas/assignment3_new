@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>assignment4_outer_source</title>
+    <link rel="stylesheet" href="{{ url_for('assignment_4.static',filename='designforproject.css') }}">
+    <script defer src={{ url_for('static',filename='jsproject.js') }}></script>
+</head>
+<body>
+<div id="container">
+    {% set page_name='assignment4_outer_source'%}
+    {% include('Header.html') %}
+    {% include('NAV.html') %}
+    <div id="item3">
+      <h1>frontend</h1>
+
+            <form action="/assignment_4/outer_source" id="frontend" method="POST">
+                <label class="frontend">id:</label>
+                <input type="text" class="frontend_id" id="frontend_id" name="frontend_id" required><br>
+                <button id="submit" onclick="getUser()" type="button">Submit</button>
+            </form><br>
+
+            <div class="center">
+                <p id="userdata"></p>
+            </div>
+
+            <h1>backend</h1>
+            <form action="/assignment_4/outer_source" id="backend_id" method="POST">
+                <label class="backend">id:</label>
+                <input type="text" class="backend_id" id="backend_id" name="backend_id" required><br>
+                <input type="submit" form="backend_id">
+            </form>
+
+
+    </div>
+
+</div>
+
+</body>
+</html>

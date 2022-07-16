@@ -1,0 +1,40 @@
+* {
+    box-sizing: border-box;
+}
+
+#container {
+    display: grid;
+    grid-template-areas:
+    'Header Header Header '
+    'Nav Main Main'
+    'Nav Main Main';
+}
+
+#item1 {
+    grid-area: Header;
+    font-size:20px;
+    background-color: rgb(237, 223, 179); font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 10px;
+}
+#item2 {
+    grid-area: Nav;
+    font-size:15px;
+    background-color: rgb(216, 204, 163); font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+#item3 {
+    grid-area: Main;
+    font-size:20px;
+    margin: 10px;
+    background-color: rgb(237, 223, 179); font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    height:100vh;
+}
+@media only screen and (max-width: 600px) {
+    body {
+        background-color: rgb(243, 236, 236);
+    }
+    #container {
+        display: grid;
+        grid-template-areas: 'Header Header'
+        'Nav Nav'
+        'Main Main';
+    }}

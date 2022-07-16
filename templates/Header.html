@@ -1,0 +1,11 @@
+ <div id="item1">
+     <h1>Hello User</h1>
+     <h2>Hope you will like the {{ page_name }} page</h2>
+     <hr>
+     <header>
+         <h3>shared</h3>
+     </header>
+    {% if session['username'] %}
+        <h1>welcome, {{ session['username'] | upper()}}</h1>
+    {% endif%}
+ </div>

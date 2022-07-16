@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home page</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='designforproject.css') }}">
+</head>
+<body>
+<div id="container">
+    {% set page_name='Home'%}
+    {% include('Header.html') %}
+    {% include('NAV.html') %}
+    <div id="item3">
+    <img src="{{url_for('static', filename='img/dog1.jpg')}}"/>
+     </div>
+</div>
+
+</body>
+</html>

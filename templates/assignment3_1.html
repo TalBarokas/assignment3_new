@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>assignment3_1</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='designforproject.css') }}">
+</head>
+<body>
+<div id="container">
+    {% block header%}
+     {% set page_name='assignment3_1'%}
+    {% include('Header.html') %}
+    {% endblock%}
+
+    {% include('NAV.html') %}
+    <div id="item3">
+    {% block Friends %}
+    {% if curr_user %}
+        <h2>Hello my name is {{ curr_user.firstname }} {{ curr_user.Lastname }}</h2>
+        {% else %}
+         <h3> Hello User</h3>
+    {% endif %}
+    <h2>My hobbies:</h2>
+    <ul>
+        {% for hobby in hobbies %}
+            <li>{{ hobby | default('Traveling',true) | upper }}</li>
+        {% endfor %}
+    </ul>
+    {% endblock %}
+
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,15 @@
+{% extends 'assignment3_1.html' %}
+ {% block header%}
+     {% set page_name='Freinds  '%}
+    {% include('Header.html') %}
+    {% endblock%}
+
+  {% block Friends %}
+    {{ super() }}
+    <h2>My friends:</h2>
+      <ul>
+      <li>Avraam</li>
+      <li>Yitzhak</li>
+      <li>Yaakov</li>
+      </ul>
+    {% endblock %}

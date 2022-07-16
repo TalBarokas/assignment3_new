@@ -1,0 +1,21 @@
+<nav id="item2">
+    <a href="/home">Home</a>
+    <br>
+    <a href="/contact">contact</a>
+    <br>
+    <a href="/assignment3_1">Assignment3_1</a>
+    <br>
+    <a href="/assignment3_2">Assignment3_2</a>
+    <br>
+    <a href="/friends">friends</a>
+    <br>
+    <a href="/assignment_4">assignment_4</a>
+    <br>
+    <a href="/assignment_4/outer_source">assignment4_outer_source</a>
+    <br>
+    {% if session['username'] %}
+        <a href="log_out">log_out</a>
+           <br>
+    {% endif %}
+
+</nav>
